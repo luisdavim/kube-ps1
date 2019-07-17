@@ -199,7 +199,7 @@ _kube_ps1_file_newer_than() {
 _kube_ps1_update_cache() {
   local return_code=$?
 
-  [[ "${KUBE_PS1_ENABLED}" == "off" ]] && return return_code=$?
+  [[ "${KUBE_PS1_ENABLED}" == "off" ]] && return $return_code
 
   if ! _kube_ps1_binary_check "${KUBE_PS1_BINARY}"; then
     # No ability to fetch context/namespace; display N/A.
